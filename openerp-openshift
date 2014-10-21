@@ -66,9 +66,14 @@ ensuite  se deplacer dans l'environement virtuel de python avec
 source python/virtenv/bin/activate
 
 installer ces prerequis avec la command
+sudo easy_install pip
 pip install requierments.txt 
 restart l'applicataion
 ctl_app restart
+
+ajouter dans app-root/runtime/repo/wsgi/application 
+conf['data_dir'] = os.environ['OPENSHIFT_DATA_DIR']
+
 
 
 pointer apres l'installation le navigateur vers l'ip/web/database/manager
