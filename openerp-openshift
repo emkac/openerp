@@ -1,0 +1,79 @@
+rhc app create openerp python-2.7 postgresql-9
+ cd openerp/
+ git remote add upstream https://github.com/caruccio/openshift-openerp-quickstart.git
+ git pull -s recursive -X theirs upstream master
+ git push
+ 
+ apres avoir faire le premier push 
+ clonner a nouveau le dossier
+ suprimer le fichier .openshift/action_hooks/build
+ renormer la dernierre version de odoo en openerp puis le placer dans le dosser wsgi/
+ 
+ dexieme solution idonne
+ prende la main en ssh sur son application
+ puis telecharger la derniere version de odoo
+ le decompresser puis renommer en openerp puis metre dans 
+ app-root/repo/wsgi
+ ctl_app restart
+ 
+ 
+ editer le ficher requirment.txt pour qu'il resemble a 
+ Babel
+Extractor
+Jinja2
+Mako
+MarkupSafe
+MySQL-python
+Pillow
+http://download.gna.org/pychart/PyChart-1.39.tar.gz
+PyWebDAV
+PyYAML
+Pygments
+SQLAlchemy
+Sphinx
+Werkzeug
+docutils
+feedparser
+gdata
+gevent
+greenlet
+lxml
+mock
+nose
+numpy
+psutil
+psycopg2
+pydot
+pyparsing
+python-dateutil
+python-openid
+python-stdnum
+pytz
+reportlab
+simplejson
+unittest2
+vatnumber
+virtualenv
+vobject
+wsgiref
+xlwt
+pyPdf
+requests
+decorator
+python-passlib
+
+ensuite  se deplacer dans l'environement virtuel de python avec 
+source python/virtenv/bin/activate
+
+installer ces prerequis avec la command
+pip install requierments.txt 
+restart l'applicataion
+ctl_app restart
+
+
+pointer apres l'installation le navigateur vers l'ip/web/database/manager
+troubleshouter l'application via tailf app-root/logs/python.log
+ou depuis le pc tail -f notre application
+
+
+ 
